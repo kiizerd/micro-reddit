@@ -1,24 +1,19 @@
-# README
+# Micro-Reddit
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple app with no front-end.
 
-Things you may want to cover:
+Contains 3 models, a User, a Post, and a Comment.
 
-* Ruby version
+User table has 4 columns, 
+ | id:primary_key | username:string | email:string | password:string |
+ | -------------- | --------------- | ------------ | --------------- |
 
-* System dependencies
+Post table has 5 columns,
+ | id:primary_key | title:string | link:string | body:text | user_id:foreign_key |
+ | -------------- | ------------ | ----------- | --------- | ------------------- |
 
-* Configuration
+Comment table has 3 columns,
+ | id:primary_key | body:text | user_id:foreign_key | post_id:foreign_key |
+ | -------------- | --------- | ------------------- | ------------------- |
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ The Post model has a custom validator, PostValidator, inheriting from ActiveModel::Validator, which checks if the post has either a body or a link.
