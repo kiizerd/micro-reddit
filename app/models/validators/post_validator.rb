@@ -9,8 +9,8 @@ module Validators
     def body_or_link(record)
       return unless record.body.blank? && record.link.blank?
 
-      record.errors.add :body, 'Post must either have a body or a link'
-      record.errors.add :link, 'Post must either have a body or a link'
+      record.errors.add :body, 'error, Post must either have a body or a link'
+      record.errors.add :link, 'error, Post must either have a body or a link'
     end
 
     def body_validation(record)
