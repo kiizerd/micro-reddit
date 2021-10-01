@@ -10,7 +10,7 @@ module Validators
         record.errors.add :link, 'is invalid'
       end
 
-      if record.link.blank? && !record.body.size.between?(10, 750)
+      if record.link.blank? && !record.body&.size&.between?(10, 750)
         record.errors.add :body, 'must be between 10 and 750 chars'
       end
     end
